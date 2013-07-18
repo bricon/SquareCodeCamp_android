@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Standard spacings for use throughout the app for consistency. -->
+  <dimen name="holo_gap">8dp</dimen>
+  <dimen name="holo_gap_2x">16dp</dimen>
+  <dimen name="holo_gap_3x">24dp</dimen>
+  <dimen name="holo_gap_4x">32dp</dimen>
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android101"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+  <!--
+    - The 'uses-sdk' tag declares which versions of Android are supported.
+    - 14 is Android 4.0 (Ice Cream Sandwich)
+    - 17 is Android 4.2 (Jelly Bean MR1)
+   -->
+  <uses-sdk
+      android:minSdkVersion="14"
+      android:targetSdkVersion="17"/>
+
+  <!--
+    - A single 'application' tag provides information about the app. Here we define the
+    - name (as it appears in the Play store), the icon, and the general theme.
+   -->
+  <application
+      android:icon="@drawable/app_icon"
+      android:label="@string/app_name"
+      android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
+      android:name=".WalletApp"
+      android:allowBackup="true"
+      >
+
+    <!--
+      - Activities are high-level screens in an app. Similar to pages on a website. Content
+      - inside an activity can change based on some state or user interaction. Large changes
+      - are easier by just moving to a new activity.
+     -->
+    <activity
+        android:name=".ui.DirectoryActivity"
+        android:label="@string/launcher_name">
+      <!--
+        - Intents are actions that you want to perform. They are used to move between activities
+        - in an application and also to move into another application. Here we set up a filter
+        - to catch an intent that is sent from the launcher, Android's home screen. This filter
+        - is what starts the app when you tap on its icon.
+       -->
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+      </intent-filter>
+    </activity>
+
+    <!--
+      - When the user is not logged in we shoot them to this activity. There is no intent filter
+      - declared which means this activity can only be run from inside this app.
+     -->
+    <activity
+        android:name=".ui.LoginActivity"
+        android:label="@string/login_activity"
+        />
+
+  </application>
+</manifest>
