@@ -2,6 +2,9 @@ allprojects {
   buildscript {
     repositories {
       mavenCentral()
+      maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+      }
     }
   }
 
@@ -10,4 +13,10 @@ allprojects {
       mavenCentral()
     }
   }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '1.9'
+  // Android Studio doesn't respect this setting yet:
+  //jarFile = "${project.projectDir}/_gradle/wrapper.jar"
 }
