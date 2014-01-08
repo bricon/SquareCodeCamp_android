@@ -17,7 +17,14 @@ public class MockData {
     location.setAccuracy(accuracy);
     return location;
   }
+public static User findUserByToken(String token){
+    for (User merchant : MERCHANTS) {
+        if (merchant.id.equals(token))
+            return merchant;
 
+    }
+    return null;
+}
   public static final User[] MERCHANTS = new User[] {
       new User("596079", "Square Kitchen", null, true, new Images(
           "https://d1g145x70srn7h.cloudfront.net/files/5dd56531308f1d30b7a09f3a648e436012a64c40/original.png",

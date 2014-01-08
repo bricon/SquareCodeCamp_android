@@ -22,7 +22,14 @@ import retrofit.client.Response;
 import static android.widget.Toast.LENGTH_SHORT;
 
 /** Handle logging in the user. */
-public class LoginActivity extends Activity {
+public class
+
+
+
+
+
+
+        LoginActivity extends Activity {
   @Inject ApiHeaders apiHeaders;
   @Inject WalletService walletService;
 

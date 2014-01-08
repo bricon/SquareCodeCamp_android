@@ -7,6 +7,7 @@ import com.example.android101.data.ApiHeaders;
 import com.example.android101.data.WalletService;
 import com.example.android101.ui.DirectoryActivity;
 import com.example.android101.ui.LoginActivity;
+import com.example.android101.ui.MerchantActivity;
 import com.squareup.okhttp.OkHttpClient;
 
 import java.security.cert.CertificateException;
@@ -34,7 +35,8 @@ import static android.content.Context.MODE_PRIVATE;
         // module projects like this one. Dagger 2.0 is slated to eliminate this requirement altogether.
         injects = {
                 LoginActivity.class,
-                DirectoryActivity.class
+                DirectoryActivity.class,
+                MerchantActivity.class
         })
 public class WalletModule {
     // Keep a reference to the application which created us.
@@ -83,7 +85,7 @@ public class WalletModule {
 
         // Declare the base endpoint we will be talking to. We'll use relative URLs from this on all
         // the API definitions that we create.
-        builder.setServer("https://api.broadway.squareup.com/1.0/");
+        builder.setServer("https://api.squareup.com/1.0/");
 
         // Set the HTTP client that we'll use. Here we are wrapping the raw OkHttpClient from OkHttp
         // in a Retrofit class. Retrofit will pick an HTTP client for us, but we make our own so that
@@ -96,7 +98,7 @@ public class WalletModule {
         builder.setRequestInterceptor(headers);
 
         // Enable some logging, since we'll inevitably break something and need to see requests.
-        builder.setLogLevel(RestAdapter.LogLevel.BASIC);
+        builder.setLogLevel(RestAdapter.LogLevel.FULL);
         builder.setLog(new RestAdapter.Log() {
             @Override
             public void log(String s) {

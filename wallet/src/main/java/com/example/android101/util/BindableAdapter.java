@@ -20,7 +20,7 @@ public abstract class BindableAdapter<T> extends BaseAdapter {
     return context;
   }
 
-  @Override public final View getView(int position, View view, ViewGroup container) {
+  @Override public View getView(int position, View view, ViewGroup container) {
     if (view == null) {
       view = newView(inflater, position, container);
       if (view == null) {
